@@ -1,0 +1,19 @@
+{
+  "name": "todoapp",
+  "version": "1.0.0",
+  "description": "todo list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gvemulapalli",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gvemulapalli33/todoApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gvemulapalli33/todoApp/issues"
+  },
+  "homepage": "https://github.com/gvemulapalli33/todoApp#readme"
+}
