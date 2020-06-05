@@ -1,0 +1,15 @@
+header {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: #dd2d4a;
+}
+
+.Todos-list {
+    list-style-type: none;
+}
+
+.Todos-list li {
+    display: flex;
+}

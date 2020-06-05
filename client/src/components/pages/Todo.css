@@ -1,0 +1,46 @@
+.Todo-content {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.checkbox {
+  width: 5%;
+  height: 30px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #B6465F;
+}
+
+.delete {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 25px;
+  margin-top: 0;
+}
+
+label {
+  width: 0;
+}
+
+input,
+button {
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  padding: 0.25rem;
+}
+
+input {
+  border: 1px solid #444;
+  display: block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 100%;
+}

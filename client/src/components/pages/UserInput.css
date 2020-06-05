@@ -1,0 +1,16 @@
+.UserInput-Add {
+  width: 20%;
+  color: #f50000;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #ddd6f3 0%, #faaca8 51%, #ddd6f3 100%)}
+.UserInput-Add:hover { background-position: right center; }
+
+.UserInput-InputBox {
+  width: 65%;
+  margin: .7em;
+  font-size: 1.5rem;
+  display: inline-block;
+  border-radius: 5px;
+}

@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const webpackMerge = require("webpack-merge")
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const entryFile = path.resolve(__dirname, "client", "src", "index.js");
 
 const loadPresets = require("./build-utils/loadPresets");
 const modeConfig = (env) => require(`./build-utils/webpack.${env.mode}.js`)(env);
@@ -10,9 +11,7 @@ module.exports = ({ mode, presets } = {mode: "production", presets: [] }) => {
   console.log( mode, presets );
 
   return webpackMerge({
-    entry: {
-      app: './src/App.js'
-    },
+    entry: entryFile,
     mode,
     devtool: 'source-map',
     resolve: {
@@ -28,20 +27,29 @@ module.exports = ({ mode, presets } = {mode: "production", presets: [] }) => {
       ],
     },
     stats: {
-      colors: true
+      colors: true,
+      reasons: true,
+      chunks: false
     },
     output: {
       path: __dirname + '/dist',
-      filename: '[name].[contenthash].js'
+      filename: '[name].bundle.js'
     },
     plugins: [
-      new HtmlWebpackPlugin(), 
+      new HtmlWebpackPlugin({
+        inject: 'body',
+        template: './client/src/index.html'
+      }), 
       new webpack.ProgressPlugin(),
       new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
-      contentBase: './dist',
-      hot: true
-    }
+      historyApiFallback: true,
+      contentBase: "./dist",
+      hot: true,
+      proxy: {
+        "/api": "http://localhost:3000"
+      },
+    },
   }, modeConfig({mode, presets}), loadPresets({mode, presets}))
 }
